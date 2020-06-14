@@ -8,13 +8,13 @@ class Login extends CI_Controller
     {
         parent::__construct();
 
-        //load model CekLogin
-        $this->load->model('ceklogin');
+        //load Login_model
+        $this->load->model('login_model');
     }
 
     function index()
     {
-        if ($this->ceklogin->is_logged_in()) {
+        if ($this->login_model->is_logged_in()) {
             //jika memang session sudah terdaftar, maka redirect berdasarkan level user
             if ($this->session->userdata("level") == "admin") {
                 redirect('admin/dashboard');
@@ -40,7 +40,7 @@ class Login extends CI_Controller
                 $password = MD5($this->input->post('password', TRUE));
 
                 //checking data via model
-                $checking = $this->ceklogin->check_login('user', array('username' => $username), array('password' => $password));
+                $checking = $this->login_model->check_login('user', array('username' => $username), array('password' => $password));
 
                 //jika ditemukan, maka create session
                 if ($checking != FALSE) {
@@ -74,8 +74,11 @@ class Login extends CI_Controller
         }
     }
 
-    public function logout()
+    function logout()
     {
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('nama');
+        $this->session->unset_userdata('level');
         $this->session->sess_destroy();
         redirect('login');
     }

@@ -16,6 +16,12 @@
     <!-- MetisMenu CSS -->
     <link href="<?= base_url('assets/'); ?>css/metisMenu.min.css" rel="stylesheet">
 
+    <!-- DataTables CSS -->
+    <link href="<?= base_url('assets/') ?>css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="<?= base_url('assets/') ?>css/dataTables/dataTables.responsive.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/'); ?>css/startmin.css" rel="stylesheet">
 
@@ -43,7 +49,7 @@
             <ul class="nav navbar-right navbar-top-links">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> Nama Pengguna <b class="caret"></b>
+                        <i class="fa fa-user fa-fw"></i><?= $nama; ?><b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Profil</a>

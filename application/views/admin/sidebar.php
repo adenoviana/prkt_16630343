@@ -19,7 +19,7 @@
                 <a href="#"><i class="fa fa-table fa-fw"></i> Master<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#"><i class="fa fa-cube fa-fw"></i> Barang</a>
+                        <a href="<?= base_url() ?>admin/barang"><i class="fa fa-cube fa-fw"></i> Barang</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

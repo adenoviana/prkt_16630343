@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class CekLogin extends CI_Model
+class Login_model extends CI_Model
 {
     //fungsi cek session logged in
     function is_logged_in()
