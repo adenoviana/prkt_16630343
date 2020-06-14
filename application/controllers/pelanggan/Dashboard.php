@@ -16,7 +16,9 @@ class Dashboard extends CI_Controller
 
     function index()
     {
-
+        $this->load->view('template/header');
+        $this->load->view('pelanggan/sidebar');
         $this->load->view('pelanggan/dashboard');
+        $this->load->view('template/footer');
     }
 }
