@@ -17,4 +17,10 @@ class Barang_model extends CI_Model
         $this->db->join('satuan', 'satuan.id_satuan = barang.id_satuan');
         return $this->db->get()->result();
     }
+
+    function simpan($data, $table)
+    {
+        //query untuk simpan
+        $this->db->insert($table, $data);
+    }
 }

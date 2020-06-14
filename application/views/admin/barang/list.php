@@ -17,7 +17,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="well">
-                            <a class="btn btn-primary btn-lg btn-block" href="#">Tambah Data Barang</a>
+                            <a class="btn btn-primary btn-lg btn-block" href="<?= base_url('admin/barang/tambah'); ?>">Tambah Data Barang</a>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover" id="dataTables1">
