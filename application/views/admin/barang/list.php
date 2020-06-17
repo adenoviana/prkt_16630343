@@ -44,8 +44,8 @@
                                             <td><?= rupiah($row->harga); ?></td>
                                             <td><?= $row->nama_jenis; ?></td>
                                             <td>
-                                                <button type="button" class="btn btn-success btn-circle"><i class="fa fa-pencil"></i></button>
-                                                <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+                                                <a href="<?= site_url('admin/barang/edit/' . $row->id_barang); ?>" class="btn btn-success btn-circle"><i class="fa fa-pencil"></i></a>
+                                                <a href="<?= site_url('admin/barang/hapus/' . $row->id_barang); ?>" class=" btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php

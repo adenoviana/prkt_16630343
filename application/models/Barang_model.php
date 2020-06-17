@@ -23,4 +23,17 @@ class Barang_model extends CI_Model
         //query untuk simpan
         $this->db->insert($table, $data);
     }
+
+    function getBarang($id = null)
+    {
+        //query untuk mengambil data berdasar id dengan cara query builder
+        return $this->db->get_where('barang', array('id_barang' => $id));
+    }
+
+    function update($data, $table)
+    {
+        //query untuk edit
+        $this->db->where('id_barang', $data['id_barang']);
+        $this->db->update($table, $data);
+    }
 }
