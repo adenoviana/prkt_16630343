@@ -133,4 +133,16 @@ class Barang extends CI_Controller
         }
         echo "<script>window.location='" . site_url('admin/barang') . "';</script>";
     }
+
+    function hapus()
+    {
+        //ambil id dari alamat url segment ke-4
+        $id = $this->uri->segment(4);
+        $this->barang_model->delete($id);
+
+        if ($this->db->affected_rows() > 0) {
+            echo "<script> alert('Data berhasil dihapus');</script>";
+        }
+        echo "<script>window.location='" . site_url('admin/barang') . "';</script>";
+    }
 }

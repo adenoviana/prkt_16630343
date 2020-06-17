@@ -45,7 +45,7 @@
                                             <td><?= $row->nama_jenis; ?></td>
                                             <td>
                                                 <a href="<?= site_url('admin/barang/edit/' . $row->id_barang); ?>" class="btn btn-success btn-circle"><i class="fa fa-pencil"></i></a>
-                                                <a href="<?= site_url('admin/barang/hapus/' . $row->id_barang); ?>" class=" btn btn-danger btn-circle"><i class="fa fa-trash"></i></a>
+                                                <a href="<?= site_url('admin/barang/hapus/' . $row->id_barang); ?>" class=" btn btn-danger btn-circle" onclick="return confirm('Anda yakin ingin menghapus data ini?');"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php
