@@ -25,6 +25,15 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="#"><i class="fa fa-table fa-fw"></i> Transaksi<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="<?= base_url() ?>admin/stokin"><i class="fa fa-cube fa-fw"></i> Stok Masuk</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-table fa-fw"></i> Laporan<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
