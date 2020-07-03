@@ -33,11 +33,19 @@
             //alert("Tombol tambah diklik");
             //mengambil nilai id_barang dan stok
             var id_barang = $("#id_barang").val();
+            var nama_barang = $("#nama_barang").val();
             var stok = $("#stok").val();
-            var markup = "<tr><td><input type='checkbox' name='data' id='data'></td><td><input type='hidden' name='id_barang[]' value='" + id_barang + "'>" + id_barang + "</td><td><input type='hidden' name='stok[]' value='" + stok + "'>" + stok + "</td></tr>";
+            var markup = "<tr><td><input type='checkbox' name='data' id='data'></td><td><input type='hidden' name='id_barang[]' value='" + id_barang + "'>" + id_barang + "</td><td>" + nama_barang + "</td><td><input type='hidden' name='stok[]' value='" + stok + "'>" + stok + "</td></tr>";
 
-            $("table tbody").append(markup);
+            if (($("#nama_barang").val().length != 0) && ($("#stok").val().length != 0)) {
+                $("table tbody").append(markup);
+            } else {
+                alert("Data tidak ditemukan atau stok masuk tidak boleh kosong");
+            }
+
             $("#id_barang").val("");
+            $("#nama_barang").val("");
+            $("#harga").val("");
             $("#stok").val("");
             $("#id_barang").focus();
         });
@@ -68,6 +76,26 @@
 
         $("#input").on('keypress', function(event) {
             return (event.which !== 13);
+        });
+
+        $('#id_barang').blur(function() {
+            var id_barang = $(this).val();
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url('admin/stokin/getBarang') ?>",
+                dataType: "JSON",
+                data: {
+                    id_barang: id_barang
+                },
+                cache: false,
+                success: function(data) {
+                    $.each(data, function(id_barang, nama_barang, harga) {
+                        $('[name="nama_barang"]').val(data.nama_barang);
+                        $('[name="harga"]').val(data.harga);
+                    });
+                }
+            });
+            return false;
         });
     });
 </script>

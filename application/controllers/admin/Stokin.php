@@ -54,4 +54,13 @@ class Stokin extends CI_Controller
             echo "<script>alert('Stok gagal disimpan');window.location='" . site_url('admin/stokin') . "';</script>";
         }
     }
+
+    function getBarang()
+    {
+        $this->load->model('barang_model');
+
+        $id_barang = $this->input->post('id_barang');
+        $data = $this->barang_model->getBarangID($id_barang);
+        echo json_encode($data);
+    }
 }

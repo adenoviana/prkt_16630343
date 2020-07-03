@@ -43,4 +43,19 @@ class Barang_model extends CI_Model
         $this->db->where('id_barang', $id);
         $this->db->delete('barang');
     }
+
+    function getBarangID($id_barang)
+    {
+        $hsl = $this->db->query("SELECT * FROM barang WHERE id_barang='$id_barang'");
+        if ($hsl->num_rows() > 0) {
+            foreach ($hsl->result() as $data) {
+                $hasil = array(
+                    'id_barang' => $data->id_barang,
+                    'nama_barang' => $data->nama_barang,
+                    'harga' => $data->harga,
+                );
+            }
+        }
+        return $hasil;
+    }
 }

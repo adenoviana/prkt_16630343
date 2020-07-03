@@ -24,6 +24,10 @@
                                         <input class="form-control" type="text" name="id_barang" id="id_barang">
                                     </div>
                                     <div class="form-group">
+                                        <label>Nama Barang</label>
+                                        <input class="form-control" type="text" name="nama_barang" id="nama_barang" disabled>
+                                    </div>
+                                    <div class="form-group">
                                         <button type="button" class="btn btn-primary" id="tambah">Tambah</button>
                                         <button type="button" class="btn btn-warning pull-right" id="hapus">Hapus</button>
                                     </div>
@@ -32,6 +36,10 @@
                                     <div class="form-group">
                                         <label>Stok Masuk</label>
                                         <input class="form-control" type="text" name="stok" id="stok">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Harga</label>
+                                        <input class="form-control" type="text" name="harga" id="harga" disabled>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-success pull-right" id="simpan">Simpan Semua</button>
@@ -44,6 +52,7 @@
                                         <tr>
                                             <th>Data</th>
                                             <th>ID Barang</th>
+                                            <th>Nama Barang</th>
                                             <th>Stok Masuk</th>
                                         </tr>
                                     </thead>
